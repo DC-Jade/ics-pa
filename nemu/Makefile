@@ -75,9 +75,12 @@ OBJS = $(SRCS:src/%.c=$(OBJ_DIR)/%.o)
 
 # Compilation patterns
 $(OBJ_DIR)/%.o: src/%.c
-	@echo + CC $<
-	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(SO_CFLAGS) -c -o $@ $<
+	# @echo + CC $<
+	# @mkdir -p $(dir $@)
+	# @$(CC) $(CFLAGS) $(SO_CFLAGS) -c -o $@ $<
+	echo + CC $<
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(SO_CFLAGS) -c -o $@ $<
 	# @$(CC) $(CFLAGS) $(SO_CFLAGS) -E $< | \
 	#   grep -ve '^#' | \
 	#   clang-format - >$(basename $@).i
